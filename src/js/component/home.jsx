@@ -20,33 +20,37 @@ const Home = () => {
     setToDos(newToDos);
   };
   return (
-    <div className="container">
+    <div>
       <h1>To-Dos!</h1>
       <h2>Add or remove tasks</h2>
-      <ul>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInput}
-          onKeyDown={handleNewTask}
-          placeholder="Type your task here!"
-        />
-        {toDos.length === 0 ? (
-          <li>No tasks, add a task </li>
-        ) : (
-          toDos.map((todo, index) => (
-            <li key={index}>
-              {todo}
-              <button
-                className="delete"
-                onClick={() => handleRemoveTask(index)}
-              >
-                <FontAwesomeIcon icon={faTrash} />
-              </button>
-            </li>
-          ))
-        )}
-      </ul>
+      <div className="container">
+        <ul>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInput}
+            onKeyDown={handleNewTask}
+            placeholder="Type your task here!"
+          />
+          {toDos.length === 0 ? (
+            <li>No tasks, add a task </li>
+          ) : (
+            toDos.map((todo, index) => (
+              <li key={index}>
+                {todo}
+                <button
+                  className="delete"
+                  onClick={() => handleRemoveTask(index)}
+                >
+                  <FontAwesomeIcon icon={faTrash} />
+                </button>
+              </li>
+            ))
+          )}
+        </ul>
+      </div>
+      <div className="container-2"></div>
+      <div className="container-3"></div>
     </div>
   );
 };

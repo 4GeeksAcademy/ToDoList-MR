@@ -13,6 +13,23 @@ body {
   -webkit-box-shadow: 0px 10px 31px 0px rgba(0, 0, 0, 0.77);
   -moz-box-shadow: 0px 10px 31px 0px rgba(0, 0, 0, 0.77);
 }
+.container-2 {
+  width: 32%;
+  margin: auto;
+  height: 5px;
+  padding: 0;
+  background-color: whitesmoke;
+  border-top: 1px solid rgb(199, 193, 193);
+}
+.container-3 {
+  width: 31%;
+  margin: auto;
+  height: 5px;
+  padding: 0;
+  background-color: whitesmoke;
+  border-top: 1px solid rgb(199, 193, 193);
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -22,7 +39,7 @@ ul li {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px;
 }
 li:hover {
   background-color: white;
@@ -30,6 +47,7 @@ li:hover {
 input {
   border: none;
   width: 100%;
+  padding: 10px;
 }
 button {
   background-color: whitesmoke;
