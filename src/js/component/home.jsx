@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import style from "../../styles/index.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
@@ -13,7 +15,7 @@ const Home = () => {
       setInputValue("");
     }
   };
-  const HandleRemoveTask = (index) => {
+  const handleRemoveTask = (index) => {
     const newToDos = toDos.filter((_, i) => i !== index);
     setToDos(newToDos);
   };
@@ -29,14 +31,21 @@ const Home = () => {
           onKeyDown={handleNewTask}
           placeholder="Type your task here!"
         />
-        {toDos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <button className="delete" onClick={() => HandleRemoveTask(index)}>
-              x
-            </button>
-          </li>
-        ))}
+        {toDos.length === 0 ? (
+          <li>No tasks, add a task </li>
+        ) : (
+          toDos.map((todo, index) => (
+            <li key={index}>
+              {todo}
+              <button
+                className="delete"
+                onClick={() => handleRemoveTask(index)}
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
